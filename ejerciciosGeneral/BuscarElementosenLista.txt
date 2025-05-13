@@ -1,0 +1,26 @@
+1- Averiguar como hacer para cargar todos los elementos.
+2- Utilizando F12, modo desarrollador (inspección), Ctrol F (selector)
+buscar div class- individualizar elemento para que lo vaya a buscar.
+3- Buscar F12 y escribir en la barra div.js.item (que seria el classname)
+si no encuentra buscar por otro atributo, por ejemplo data-store o cualquier otro atributo
+que tenga el elemento.
+
+codigo=
+
+// Ejecutar el script para hacer scroll hasta el final de la página
+JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+jsExecutor.executeScript("window.scrollBy(0, 20000);");
+
+//Buscar con el driver.findElement
+
+List<WebElement> lista= driver.findElement(by.className(className:"js-item-name"));
+int contador=0
+
+for (WebElement producto:lista) {
+    if (producto.getText().contains("Star Wars")){
+       contador++;
+    }
+}
+ System.out.println(contador);
+}
+
